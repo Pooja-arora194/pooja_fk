@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f6f6f6;
+    height: 100vh;
+}
+
+h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: 500;
+    color: #333;
+}
+
+label span {
+    color: red;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}

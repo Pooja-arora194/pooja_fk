@@ -11,3 +11,242 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f6f8fc;
+}
+
+.register-card {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width:600px;
+}
+
+.register-card h2 {
+  margin-bottom: 25px;
+  text-align: center;
+  color: #333;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+  color: #444;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+/* Switch to login */
+.switch-text {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.switch-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f6f8fc;
+}
+
+.login-card {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+}
+
+.login-card h2 {
+  margin-bottom: 25px;
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+  color: #444;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+.switch-text {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.switch-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  border-right: 1px solid #e0e0e0;
+}
+
+.sidebar-section {
+  margin-top: 20px;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.menu-item {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-item.active {
+  color: #5d2390;
+  font-weight: bold;
+}
+
+.table-header {
+  background-color: #5d2390;
+}
+
+.modal-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #555;
+}
+
+input.form-control,
+select.form-select {
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+input[type="date"] {
+  padding: 8px 10px;
+}
+
+input.form-control:focus,
+select.form-select:focus {
+  border-color: #4B0082;
+  box-shadow: none;
+}
+
+button.ant-btn-primary {
+  background-color: #4B0082;
+  border-color: #4B0082;
+  border-radius: 6px;
+}
+
+button.ant-btn-primary:hover {
+  background-color: #3a006f;
+  border-color: #3a006f;
+}
+
+button.ant-btn {
+  border-radius: 6px;
+}
+
+.mt-2 strong {
+  color: #4B0082;
+}
+.ant-modal-title {
+  text-align: center;
+  width: 100%;
+
+}
+
