@@ -7,11 +7,12 @@ import moment from 'moment'
 import { ToastContainer, toast } from "react-toastify";
 import { Dropdown, Menu } from "antd";
 import { MoreOutlined } from "@ant-design/icons";
-const { Option } = Select;
 
+import {Api_Url} from "../setting";
 const position = [
     'Present', 'Absent',
 ]
+const { Option } = Select;
 const Employee = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [filterPosition, setFilterPosition] = useState("");
@@ -30,10 +31,9 @@ const Employee = () => {
 
     const fetchCandidates = async () => {
         try {
-            const res = await axios.get("http://localhost:8000/all");
-            console.log(res.data, "res.datares.datares.datares.datares.data")
-
-            setCandidates(res.data);
+            const res = await axios.get(`${Api_Url}/all`);
+            const selectedCandidates = res.data.filter(item => item.status === 'Selected');
+            setCandidates(selectedCandidates);
         } catch (err) {
             console.error("Error fetching candidates", err);
         }
@@ -58,7 +58,7 @@ const Employee = () => {
     };
     const handleDeleteCandidate = async (id) => {
         try {
-            await axios.delete(`http://localhost:8000/delete/${id}`);
+            await axios.delete(`${Api_Url}/delete/${id}`);
             toast.success("Candidate deleted successfully");
             fetchCandidates();
         } catch (err) {
@@ -68,8 +68,8 @@ const Employee = () => {
     };
     const handleStatusChange = async (id, newStatus) => {
         try {
-            await axios.put(`http://localhost:8000/update-status/${id}`, {
-                status: newStatus,
+            await axios.put(`${Api_Url}/update-attendance-status/${id}`, {
+                attendance: newStatus,
             });
             toast.success("Status updated successfully");
             fetchCandidates();
@@ -149,12 +149,12 @@ const Employee = () => {
                             <td>
                                 <select
                                     className="form-select rounded-pill"
-                                    value={cand.status}
+                                    value={cand.attendance}
                                     onChange={(e) => handleStatusChange(cand._id, e.target.value)}
                                 >
                                     <option >Status</option>
-                                    <option value="Scheduled">Present</option>
-                                    <option value="Ongoing">Absent</option>
+                                    <option value="Present">Present</option>
+                                    <option value="Absent">Absent</option>
 
                                 </select>
                             </td>

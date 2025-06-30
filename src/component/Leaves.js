@@ -7,7 +7,7 @@ import axios from 'axios';
 import 'antd/dist/reset.css';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Api_Url } from "../setting";
 const position = ['Approve', 'Reject', ];
 const Leaves = () => {
     const [form] = Form.useForm();
@@ -22,7 +22,7 @@ const Leaves = () => {
 
     const fetchLeaves = async () => {
         try {
-            const res = await axios.get("http://localhost:8000/allLeaves");
+            const res = await axios.get(`${Api_Url}/allLeaves`);
             setAllLeave(res.data);
         } catch (err) {
             console.error("Error fetching leaves", err);
@@ -37,7 +37,7 @@ const Leaves = () => {
 
     const handleStatusChange = async (id, newStatus) => {
         try {
-            await axios.put(`http://localhost:8000/update-leave-status/${id}`, {
+            await axios.put(`${Api_Url}/update-leave-status/${id}`, {
                 status: newStatus,
             });
             toast.success("Status updated successfully");

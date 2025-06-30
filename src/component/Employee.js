@@ -7,6 +7,7 @@ import moment from 'moment'
 import { ToastContainer, toast } from "react-toastify";
 import { Dropdown, Menu } from "antd";
 import { MoreOutlined } from "@ant-design/icons";
+import { Api_Url } from "../setting";
 const { Option } = Select;
 
 const position = [
@@ -30,9 +31,8 @@ const Employee = () => {
 
     const fetchCandidates = async () => {
         try {
-            const res = await axios.get("http://localhost:8000/all");
+            const res = await axios.get(`${Api_Url}/all`);
             const selectedCandidates = res.data.filter(item => item.status === 'Selected');
-            console.log(selectedCandidates, "sssssssssssssssssssssss")
             setCandidates(selectedCandidates);
         } catch (err) {
             console.error("Error fetching candidates", err);
@@ -58,7 +58,7 @@ const Employee = () => {
     };
     const handleDeleteCandidate = async (id) => {
         try {
-            await axios.delete(`http://localhost:8000/delete/${id}`);
+            await axios.delete(`${Api_Url}/delete/${id}`);
             toast.success("Candidate deleted successfully");
             fetchCandidates();
         } catch (err) {

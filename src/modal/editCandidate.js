@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Button } from "antd";
 import axios from "axios";
-
+import {Api_Url} from "../setting"
 const EditCandidateModal = ({ open, onClose, candidates, onSubmit }) => {
     const [formData, setFormData] = useState({
         name: "",
@@ -13,7 +13,6 @@ const EditCandidateModal = ({ open, onClose, candidates, onSubmit }) => {
     });
 
     const [isChecked, setIsChecked] = useState(false);
-    console.log(candidates, "cccccccccccccccccccc")
     useEffect(() => {
         if (candidates) {
             setFormData({
@@ -43,7 +42,7 @@ const EditCandidateModal = ({ open, onClose, candidates, onSubmit }) => {
         if (!candidates || !candidates._id) return;
 
         try {
-            const res = await axios.put(`http://localhost:8000/edit/${candidates._id}`, formData);
+            const res = await axios.put(`${Api_Url}/edit/${candidates._id}`, formData);
             if (onSubmit) onSubmit()
         } catch (error) {
             console.error("Error updating candidate:", error);

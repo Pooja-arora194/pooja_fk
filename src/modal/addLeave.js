@@ -2,7 +2,7 @@ import React, { useState , useEffect} from "react";
 import { Modal, Button, DatePicker } from "antd";
 import axios from "axios";
 import moment from "moment";
-
+import { Api_Url } from "../setting";
 const AddLeaveModal = ({ open, onClose, onSubmit }) => {
     const [formData, setFormData] = useState({
         candidateId: "",
@@ -21,8 +21,9 @@ const AddLeaveModal = ({ open, onClose, onSubmit }) => {
 
     const fetchCandidates = async () => {
         try {
-            const res = await axios.get("http://localhost:8000/all");
-            setCandidates(res.data);
+            const res = await axios.get(`${Api_Url}/all`);
+            const selectedCandidates = res.data.filter(item => item.attendance === 'Present');
+            setCandidates(selectedCandidates);
         } catch (err) {
             console.error("Error fetching candidates", err);
         }
@@ -54,7 +55,7 @@ const AddLeaveModal = ({ open, onClose, onSubmit }) => {
         }
 
         try {
-            const response = await axios.post("http://localhost:8000/addLeaves", payload, {
+            const response = await axios.post(`${Api_Url}/addLeaves`, payload, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
             console.log("Leave submitted successfully:", response.data);

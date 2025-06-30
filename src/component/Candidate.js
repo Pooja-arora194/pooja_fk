@@ -4,14 +4,14 @@ import { Modal, Form, Input, Select, Button } from "antd";
 import AddCandidateModal from "../modal/addCandidate";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-const { Option } = Select;
-
+import { Api_Url } from "../setting";
 const status = [
    'New', 'Scheduled', 'Ongoing', 'Selected', 'Rejected'
 ];
 const position = [
     'Intern', 'Full Time', 'Part Time'
 ]
+const { Option } = Select;
 const Candidates = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [filterPosition, setFilterPosition] = useState("");
@@ -32,7 +32,7 @@ const Candidates = () => {
 
     const fetchCandidates = async () => {
         try {
-            const res = await axios.get("http://localhost:8000/all");
+            const res = await axios.get(`${Api_Url}/all`);
             setCandidates(res.data);
         } catch (err) {
             console.error("Error fetching candidates", err);
@@ -54,7 +54,7 @@ const Candidates = () => {
 
     const handleStatusChange = async (id, newStatus) => {
         try {
-            await axios.put(`http://localhost:8000/update-status/${id}`, {
+            await axios.put(`${Api_Url}/update-status/${id}`, {
                 status: newStatus,
             });
             toast.success("Status updated successfully");
@@ -166,15 +166,16 @@ const Candidates = () => {
                             </td>
                             <td>
                                 {cand.resume ? (
-                                    <a
-                                        href={`http://localhost:8000/uploads/${cand.resume}`}
-                                        download
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="btn btn-sm btn-outline-primary"
-                                    >
-                                        Download
-                                    </a>
+                                    // <a
+                                    //     href={`${Api_Url}/uploads/${cand.resume}`}
+                                    //     download
+                                    //     target="_blank"
+                                    //     rel="noopener noreferrer"
+                                    //     className="btn btn-sm btn-outline-primary"
+                                    // >
+                                    //     Download
+                                    // </a>
+                                    <a href={cand.resume} target="_blank" rel="noopener noreferrer">View</a>
                                 ) : (
                                     <span className="text-muted">No Resume</span>
                                 )}

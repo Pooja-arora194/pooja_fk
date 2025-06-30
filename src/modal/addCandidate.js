@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button } from "antd";
 import axios from "axios";
-import { Api_Url } from "../setting";
+import {Api_Url} from "../setting"
 
 const AddCandidateModal = ({ open, onClose, onSubmit }) => {
     const [formData, setFormData] = useState({
