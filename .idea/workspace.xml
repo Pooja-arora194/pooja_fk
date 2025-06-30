@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cba6a88a-1958-4ae2-ba0e-015d46a46dd9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Attendance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Attendance.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Candidate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Candidate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Employee.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Leaves.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Leaves.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Navbar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modal/addCandidate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modal/addCandidate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modal/addLeave.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modal/addLeave.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modal/editCandidate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modal/editCandidate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setting.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +57,7 @@
       <updated>1751175677169</updated>
       <workItem from="1751175678173" duration="17577000" />
       <workItem from="1751204678926" duration="16727000" />
-      <workItem from="1751254749159" duration="9227000" />
+      <workItem from="1751254749159" duration="10680000" />
     </task>
     <servers />
   </component>
