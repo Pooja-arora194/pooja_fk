@@ -9,7 +9,7 @@ const EditCandidateModal = ({ open, onClose, candidates, onSubmit }) => {
         phone: "",
         position: "",
         department: "",
-        dateOfJoining: "",
+        joiningDate: "",
     });
 
     const [isChecked, setIsChecked] = useState(false);
@@ -126,8 +126,8 @@ const EditCandidateModal = ({ open, onClose, candidates, onSubmit }) => {
                         <input
                             type="date"
                             className="form-control"
-                            name="dateOfJoining"
-                            value={formData.dateOfJoining}
+                            name="joiningDate"
+                            value={formData.joiningDate}
                             onChange={handleChange}
                         />
                     </div>
@@ -136,9 +136,11 @@ const EditCandidateModal = ({ open, onClose, candidates, onSubmit }) => {
                 </div>
 
                 <div className="text-center mt-4">
-                    <Button type="primary" htmlType="submit" disabled={!isChecked}>
+                    <button
+                        className="btn btn-primary rounded-pill"
+                    >
                         Update
-                    </Button>
+                    </button>
                 </div>
             </form>
         </Modal>

@@ -51,7 +51,6 @@ const Employee = () => {
         return matchesSearch && matchesPosition;
     });
     const handleEditCandidate = (values) => {
-        console.log("New Candidate:", values);
         setIsModalOpen(false);
         fetchCandidates()
         form.resetFields();
